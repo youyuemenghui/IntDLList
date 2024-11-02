@@ -1,0 +1,46 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-pedantic-errors",
+      "-Wunused-parameter",
+      "-Wuninitialized",
+      "-Wfloat-equal",
+      "-Wconversion",
+      "-g",
+      "-Iinclude",
+      "-c",
+      "-o",
+      "build/IntDLList.o",
+      "src/IntDLList.cpp"
+    ],
+    "directory": "/home/youyue/data/ArchiveData/Code/c++/LearningSource/IntDLList",
+    "file": "/home/youyue/data/ArchiveData/Code/c++/LearningSource/IntDLList/src/IntDLList.cpp",
+    "output": "/home/youyue/data/ArchiveData/Code/c++/LearningSource/IntDLList/build/IntDLList.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-pedantic-errors",
+      "-Wunused-parameter",
+      "-Wuninitialized",
+      "-Wfloat-equal",
+      "-Wconversion",
+      "-g",
+      "-Iinclude",
+      "-c",
+      "-o",
+      "build/main.o",
+      "src/main.cpp"
+    ],
+    "directory": "/home/youyue/data/ArchiveData/Code/c++/LearningSource/IntDLList",
+    "file": "/home/youyue/data/ArchiveData/Code/c++/LearningSource/IntDLList/src/main.cpp",
+    "output": "/home/youyue/data/ArchiveData/Code/c++/LearningSource/IntDLList/build/main.o"
+  }
+]
