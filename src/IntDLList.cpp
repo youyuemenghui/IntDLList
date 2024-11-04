@@ -350,12 +350,6 @@ IntDLLNode* IntDLList::Find(int target)const
 }
 void IntDLList::Print()const
 {
-  //IntDLLNode* current = this->_header; // 从头节点开始
-  //while (current != nullptr) {    // 遍历链表
-  //    std::cout << current->GetData() << " "; // 打印当前节点的数据
-  //    current = current->GetNext(); // 移动到下一个节点
-  //}
-  //std::cout << std::endl; // 打印换行
   for(auto i:*this)
   {
     std::cout << i << " "; // 打印当前节点的数据

@@ -2,28 +2,28 @@
 
 int main()
 {
-  IntDLList Slist;
-  Slist.Push(5);
-  Slist.Push(4);
-  Slist.Push(3);
-  Slist.Push(2);
-  Slist.Push(1);
-  Slist.Append(6);
-  Slist.Insert(0,Slist.Head());
+  IntDLList Dlist;
+  Dlist.Push(5);
+  Dlist.Push(4);
+  Dlist.Push(3);
+  Dlist.Push(2);
+  Dlist.Push(1);
+  Dlist.Append(6);
+  Dlist.Insert(0,Dlist.Head());
   std::cout<<"链表内容:"<<std::endl;
-  for(auto i:Slist)
+  for(auto i:Dlist)
   {
       std::cout<<i<<std::endl;
   }
   std::cout<<"反向链表内容:"<<std::endl;
-  for(auto i:Slist.reverse_adapter())
+  for(auto i:Dlist.reverse_adapter())
   {
     std::cout<<i<<std::endl;
   }
-  auto* value=Slist.Pop();
+  auto* value=Dlist.Pop();
   std::cout<<"delete Node :"<<*value<<std::endl;
   delete value;
-  Slist.Print();
-  Slist.ReversePrint();
+  Dlist.Print();
+  Dlist.ReversePrint();
 	return 0;
 }

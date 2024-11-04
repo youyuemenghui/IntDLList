@@ -1,4 +1,3 @@
-#include <iostream>
 #ifndef  __INTDLLIST_HPP_
 #define __INTDLLIST_HPP_
 
@@ -72,10 +71,10 @@ class IntDLList
     class ReverseAdapter 
     {
     public:
-        IntDLList& list;
-        ReverseAdapter(IntDLList& lst) : list(lst) {}
-        ReverseIterator begin() { return list.rbegin();}
-        ReverseIterator end() { return list.rend();}
+      IntDLList& list;
+      ReverseAdapter(IntDLList& lst) : list(lst) {}
+      ReverseIterator begin() { return list.rbegin();}
+      ReverseIterator end() { return list.rend();}
     };
     // 方法以便调用适配器
     ReverseAdapter reverse_adapter() 
