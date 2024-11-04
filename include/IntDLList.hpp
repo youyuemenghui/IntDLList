@@ -30,6 +30,17 @@ class Iterator
     IntDLLNode *_current;
 };
 
+class ReverseIterator
+{
+  public:
+    ReverseIterator(IntDLLNode* ptr):_current(ptr){}
+    bool operator!=(const ReverseIterator& other )const;
+    int operator*()const;
+    const ReverseIterator& operator++();
+  private:
+    IntDLLNode *_current;
+};
+
 class IntDLList
 {
   public:
@@ -52,9 +63,25 @@ class IntDLList
     bool Inlist(const int target);  //判断数据所在节点是否在链表中
     IntDLLNode* Find(int target)const;
     void Print()const;  //遍历打印 
+    void ReversePrint()const;  //遍历打印 
 
     Iterator begin()const;
     Iterator end()const;
+    ReverseIterator rbegin()const;
+    ReverseIterator rend()const;
+    class ReverseAdapter 
+    {
+    public:
+        IntDLList& list;
+        ReverseAdapter(IntDLList& lst) : list(lst) {}
+        ReverseIterator begin() { return list.rbegin();}
+        ReverseIterator end() { return list.rend();}
+    };
+    // 方法以便调用适配器
+    ReverseAdapter reverse_adapter() 
+    {
+      return ReverseAdapter(*this);
+    }
   private:
     int _Length;
     IntDLLNode *_header,*_tail;

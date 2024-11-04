@@ -18,6 +18,24 @@ const Iterator& Iterator::operator++()
   return *this;
 }
 
+bool ReverseIterator::operator!=(const ReverseIterator& other)const
+{
+  return this->_current!=other._current;
+}
+int ReverseIterator::operator*()const
+{
+  return this->_current->GetData();
+}
+const ReverseIterator& ReverseIterator::operator++()
+{
+  if(_current)
+  {
+    this->_current=this->_current->GetPrev();
+  }
+  return *this;
+}
+
+
 IntDLList::IntDLList()
 {
   this->_header=this->_tail=nullptr;
@@ -332,10 +350,23 @@ IntDLLNode* IntDLList::Find(int target)const
 }
 void IntDLList::Print()const
 {
-  IntDLLNode* current = this->_header; // 从头节点开始
-  while (current != nullptr) {    // 遍历链表
-      std::cout << current->GetData() << " "; // 打印当前节点的数据
-      current = current->GetNext(); // 移动到下一个节点
+  //IntDLLNode* current = this->_header; // 从头节点开始
+  //while (current != nullptr) {    // 遍历链表
+  //    std::cout << current->GetData() << " "; // 打印当前节点的数据
+  //    current = current->GetNext(); // 移动到下一个节点
+  //}
+  //std::cout << std::endl; // 打印换行
+  for(auto i:*this)
+  {
+    std::cout << i << " "; // 打印当前节点的数据
+  }
+  std::cout << std::endl; // 打印换行
+}
+void IntDLList::ReversePrint()const
+{ 
+  for (auto i = rbegin(); i != rend(); ++i) 
+  {
+    std::cout << *i << " "; // 打印当前节点的数据
   }
   std::cout << std::endl; // 打印换行
 }
@@ -347,4 +378,13 @@ Iterator IntDLList::begin()const
 Iterator IntDLList::end()const
 {
    return Iterator(nullptr);
+}
+//反向遍历支持
+ReverseIterator IntDLList::rbegin()const
+{
+  return ReverseIterator(this->_tail);
+}
+ReverseIterator IntDLList::rend()const
+{
+   return ReverseIterator(nullptr);
 }
